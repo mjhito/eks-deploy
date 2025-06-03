@@ -1,7 +1,7 @@
 variable "name" {
     type = string
     description = "name of cluster"
-    default = "juice-shop-cluster"
+    default = "eks-test-cluster"
 }
 
 variable "region" {
