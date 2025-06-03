@@ -4,9 +4,9 @@
    
 https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html 
 
-3.Set up secret variables for pipeline
-AWS_ACCESS_KEY_ID
-
+3.Set up following secret variables for pipeline
+- AWS_ACCESS_KEY_ID
+- AWS_SECRET_ACCESS_KEY
 4. Run pipeline to deploy AWS infrastructure
 5. Login to cluster
 ```
