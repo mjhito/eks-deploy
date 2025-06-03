@@ -81,3 +81,16 @@ helm upgrade --install snyk-monitor snyk-charts/snyk-monitor \
              --set clusterName=<ENTER_CLUSTER_NAME> \
              -f <newFile>.yaml
 ```
+9. Verify deployment
+```
+kubectl get all -n snyk-monitor
+
+NAME                                READY   STATUS    RESTARTS   AGE
+pod/snyk-monitor-66c697b4db-lnr69   1/1     Running   0          54s
+
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/snyk-monitor   1/1     1            1           54s
+
+NAME                                      DESIRED   CURRENT   READY   AGE
+replicaset.apps/snyk-monitor-66c697b4db   1         1         1       54s
+```
