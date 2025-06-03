@@ -1,8 +1,9 @@
 # eks-deploy
 
-1. Install AWS cli
-2. Run pipeline to deploy AWS infrastructure
-3. Login to cluster
+1. Install AWS CLI
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html 
+3. Run pipeline to deploy AWS infrastructure
+4. Login to cluster
 ```
 aws eks update-kubeconfig --region us-east-1 --name <cluster name>
 ```
