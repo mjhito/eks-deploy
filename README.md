@@ -1,7 +1,9 @@
 # eks-deploy
 
 1. Install AWS CLI
+   
 https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html 
+
 3. Run pipeline to deploy AWS infrastructure
 4. Login to cluster
 ```
