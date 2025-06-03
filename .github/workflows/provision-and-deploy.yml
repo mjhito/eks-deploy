@@ -1,10 +1,5 @@
 name: 'Provision EKS and Deploy Juice Shop'
-on:
-  push:
-    branches:
-    - master
-    paths:
-    - '_build_flag'
+on: workflow_dispatch
 
 jobs:
   provision-eks:
