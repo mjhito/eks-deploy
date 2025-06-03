@@ -1,5 +1,12 @@
 # eks-deploy
 
+1. Install AWS cli
+2. Run pipeline to deploy AWS infrastructure
+3. Login to cluster
+```
+aws eks update-kubeconfig --region us-east-1 --name <cluster name>
+```
+
 ## Application deployment
 1. Create namespace to deploy application
 ```
