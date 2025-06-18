@@ -38,6 +38,9 @@ jobs:
 
     - name: Terraform Init
       run: terraform -chdir=terraform init -upgrade
+    
+    - name: Show Terraform Provider Version
+      run: terraform -chdir=terraform providers
 
     - name: Terraform Apply
       run: terraform -chdir=terraform apply -auto-approve
