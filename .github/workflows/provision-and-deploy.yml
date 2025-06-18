@@ -37,7 +37,6 @@ jobs:
       run: |
         rm -rf terraform/.terraform
         rm -f terraform/.terraform.lock.hcl
-        find ~/.terraform.d/plugins -type d -name aws -exec rm -rf {} +
 
 
     - name: Terraform Init
