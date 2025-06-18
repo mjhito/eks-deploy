@@ -32,9 +32,12 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
+        
+    - name: Remove old Terraform provider cache and lockfile
+      run: rm -rf terraform/.terraform terraform/.terraform.lock.hcl
 
     - name: Terraform Init
-      run: terraform -chdir=terraform init
+      run: terraform -chdir=terraform init -upgrade
 
     - name: Terraform Apply
       run: terraform -chdir=terraform apply -auto-approve
