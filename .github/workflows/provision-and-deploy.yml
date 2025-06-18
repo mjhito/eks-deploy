@@ -34,7 +34,11 @@ jobs:
         aws-region: us-east-1
         
     - name: Remove old Terraform provider cache and lockfile
-      run: rm -rf terraform/.terraform terraform/.terraform.lock.hcl
+      run: |
+        rm -rf ~/.terraform.d/plugins/registry.terraform.io/hashicorp/aws
+        rm -rf terraform/.terraform
+        rm -f terraform/.terraform.lock.hcl
+
 
     - name: Terraform Init
       run: terraform -chdir=terraform init -upgrade
