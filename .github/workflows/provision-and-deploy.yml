@@ -35,16 +35,18 @@ jobs:
         
     - name: Remove old Terraform provider cache and lockfile
       run: |
-        rm -rf ~/.terraform.d/plugins/registry.terraform.io/hashicorp/aws
         rm -rf terraform/.terraform
         rm -f terraform/.terraform.lock.hcl
+        find ~/.terraform.d/plugins -type d -name aws -exec rm -rf {} +
 
 
     - name: Terraform Init
       run: terraform -chdir=terraform init -upgrade
     
-    - name: Show Terraform Provider Version
-      run: terraform -chdir=terraform providers
+    - name: Show installed AWS provider version
+      run: |
+        echo "Installed AWS provider version:"
+        grep 'version =' terraform/.terraform.lock.hcl | grep aws || echo "Not found"
 
     - name: Terraform Apply
       run: terraform -chdir=terraform apply -auto-approve
